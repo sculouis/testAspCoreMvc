@@ -1,0 +1,22 @@
+@model testMvc.ViewModels.ProductListView @{ ViewData["Title"] = "About"; }
+<h2>@ViewBag.Title</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+<table class="table table-striped table-bordered table-hover">
+    <tr style="background-color: #E8EEF4;">
+        <td>產品編號</td>
+        <td>產品名稱</td>
+    </tr>
+    @foreach (var item in Model.prdState) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+    </tr>
+    }
+</table>
+
